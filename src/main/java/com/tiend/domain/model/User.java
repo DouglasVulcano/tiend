@@ -1,18 +1,18 @@
 package com.tiend.domain.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class User {
     Long id;
     String username;
     String email;
     String password;
-    Date createdAt;
+    LocalDateTime createdAt;
 
     public User() {
     }
 
-    public User(Long id, String username, String email, String password, Date createdAt) {
+    public User(Long id, String username, String email, String password, LocalDateTime createdAt) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -40,7 +40,7 @@ public class User {
         return password;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 

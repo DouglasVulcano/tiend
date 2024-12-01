@@ -1,6 +1,7 @@
 package com.tiend.adapter.output.persistence;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -22,8 +23,13 @@ public class UserRepositoryImpl implements UserRepository {
         return user;
     }
 
-    public User findById(Long id) {
-        return UserPersistenceMapper.toDomain(this.jpaUserRepository.findById(id).orElse(null));
+    public Optional<User> findById(Long id) {
+        return Optional.ofNullable(UserPersistenceMapper.toDomain(this.jpaUserRepository.findById(id).orElse(null)));
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return Optional
+                .ofNullable(UserPersistenceMapper.toDomain(this.jpaUserRepository.findByEmail(email).orElse(null)));
     }
 
     public List<User> findAll() {

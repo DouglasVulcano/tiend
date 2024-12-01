@@ -1,7 +1,7 @@
 package com.tiend.adapter.output.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,5 +27,5 @@ public class JpaUserEntity implements Serializable {
     String username;
     String email;
     String password;
-    Date createdAt;
+    LocalDateTime createdAt;
 }
