@@ -52,7 +52,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             var authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
 
             // Cria um objeto de autenticação com o usuário autenticado e suas permissões
-            var authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+            var authentication = new UsernamePasswordAuthenticationToken(user.getId(), null, authorities);
 
             // Associa a autenticação ao contexto de segurança da aplicação
             SecurityContextHolder.getContext().setAuthentication(authentication);
